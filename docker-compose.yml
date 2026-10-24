@@ -1,0 +1,23 @@
+# PostGIS para el pipeline. Lee usuario, contraseña, base y puerto de .env.
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: arcgis_rest_postgis
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-gis}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en .env}
+      POSTGRES_DB: ${POSTGRES_DB:-geodata}
+    ports:
+      # 5433 en el host para no chocar con un PostgreSQL local en 5432.
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  pgdata:

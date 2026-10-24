@@ -1,0 +1,33 @@
+# Entorno y secretos
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Datos intermedios: se regeneran con el pipeline
+data/raw/
+data/processed/
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# RAN: se versionan solo los estados de la fase activa (KML de núcleos agrarios).
+# Los demás archivos se guardan localmente para las siguientes fases.
+data/ran/**/*.zip
+data/ran/chis/
+data/ran/ver/
+data/ran/qroo/
+data/ran/yuc/
+
+# Nota: data/gee/, web/data/, docs/img/ y reports/ SÍ se versionan:
+# permiten reproducir PostGIS, gráficas y mapa sin cuenta de Earth Engine.
+
+# Guardado parcial de Earth Engine (se borra al completar cada estado)
+data/gee/*.parcial.csv

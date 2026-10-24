@@ -1,0 +1,11 @@
+{
+  "fuente": "CONANP vía NOAA NCEI (Gulf of Mexico Data Atlas)",
+  "url_servicio": "https://services2.arcgis.com/C8EMgrsFcRFL6LrL/arcgis/rest/services/CONAMP_Federal_Protected_Areas_in_Mexico_2026/FeatureServer/1",
+  "capa": "Federal Protected Areas in Mexico 2026",
+  "descargado": "2026-10-24T06:09:47+00:00",
+  "total": 232,
+  "en_peninsula": 38,
+  "geometrias_reparadas": 6,
+  "tolerancia_simplificacion_m": 150.0,
+  "tamano_mb": 0.8
+}

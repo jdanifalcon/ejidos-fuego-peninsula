@@ -1,0 +1,16 @@
+{
+  "estado": "Campeche",
+  "hansen": "UMD/hansen/global_forest_change_2025_v1_13",
+  "mcd64a1": "MODIS/061/MCD64A1",
+  "firms": "FIRMS",
+  "anios": [
+    2015,
+    2024
+  ],
+  "umbral_cobertura": 30,
+  "buffer_sensibilidad_m": 500,
+  "firms_confianza_min": 50,
+  "simplificacion_m": 5,
+  "proyecto_ee": "ee-jofalcon",
+  "calculado": "2026-10-24T07:16:28+00:00"
+}

@@ -1,0 +1,44 @@
+# Pruebas + pipeline completo contra un PostGIS real en cada push/PR.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    services:
+      postgis:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: gis
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: geodata
+        ports: ["5433:5432"]
+        options: >-
+          --health-cmd "pg_isready -U gis -d geodata"
+          --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      POSTGRES_PASSWORD: ci_only_password
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Pruebas unitarias
+        run: python -m pytest -q
+      # --skip-gee: usa las métricas de Earth Engine versionadas en data/gee/ (CI no tiene credenciales de GEE).
+      - name: Pipeline completo (ANP -> RAN -> métricas en caché -> PostGIS -> mapa -> reporte)
+        run: python -m src.pipeline --skip-gee
+      - name: Guardar reporte
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-calidad
+          path: |
+            reports/
+            web/reporte.html

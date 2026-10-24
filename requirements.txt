@@ -1,0 +1,16 @@
+# Versiones fijas para que el resultado sea reproducible (Python 3.11+).
+requests==2.32.3
+python-dotenv==1.0.1
+pandas==2.2.3
+geopandas==1.0.1
+shapely==2.0.6
+pyproj==3.7.0
+pyogrio==0.10.0
+SQLAlchemy==2.0.36
+GeoAlchemy2==0.16.0
+psycopg2-binary==2.9.10
+earthengine-api==1.7.35
+matplotlib==3.9.2
+
+# Desarrollo
+pytest==8.3.4
