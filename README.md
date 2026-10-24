@@ -1,6 +1,6 @@
 # Fuego y pérdida forestal en ejidos del sureste de México
 
-[![CI](https://github.com/TU_USUARIO/ejidos-fuego-peninsula/actions/workflows/ci.yml/badge.svg)](https://github.com/TU_USUARIO/ejidos-fuego-peninsula/actions/workflows/ci.yml)
+[![CI](https://github.com/jdanifalcon/ejidos-fuego-peninsula/actions/workflows/ci.yml/badge.svg)](https://github.com/jdanifalcon/ejidos-fuego-peninsula/actions/workflows/ci.yml)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)
 ![PostGIS 3.4](https://img.shields.io/badge/PostGIS-3.4-336791)
 ![Earth Engine](https://img.shields.io/badge/Google%20Earth%20Engine-API%20Python-4285F4)
@@ -11,7 +11,7 @@ y qué ejidos son los más afectados?
 
 **Fase 1:** Campeche y Tabasco, 2015–2024 · **Fase 2:** Quintana Roo y Yucatán.
 
-**🗺️ Mapa:** https://TU_USUARIO.github.io/ejidos-fuego-peninsula/ ·
+**🗺️ Mapa:** https://jdanifalcon.github.io/ejidos-fuego-peninsula/ ·
 **📋 Reporte de calidad:** [reports/reporte_calidad.md](reports/reporte_calidad.md)
 
 ![Visor Ejidos](docs/img/visor.png)
@@ -127,7 +127,7 @@ Requisitos: **Python 3.11+**, **Docker** (o un PostgreSQL con PostGIS) y, solo p
 una cuenta de **Google Earth Engine**.
 
 ```bash
-git clone https://github.com/TU_USUARIO/ejidos-fuego-peninsula.git
+git clone https://github.com/jdanifalcon/ejidos-fuego-peninsula.git
 cd ejidos-fuego-peninsula
 cp .env.example .env        # cambia POSTGRES_PASSWORD y EE_PROJECT
 ```

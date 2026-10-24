@@ -8,7 +8,7 @@
  */
 
 // Cambia esta URL por la de tu repositorio.
-const REPO_URL = "https://github.com/TU_USUARIO/ejidos-fuego-peninsula";
+const REPO_URL = "https://github.com/jdanifalcon/ejidos-fuego-peninsula";
 
 const COLORS = { loss: "#2a78d6", fire: "#eb6834", anp: "#1b7f5a", zero: "#ecebe6", edge: "#8a8a82" };
 const RAMP = ["#fbd9c6", "#f6b08c", "#ee8255", "#d95926", "#a8431b"]; // secuencial, un solo tono
